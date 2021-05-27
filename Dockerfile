@@ -1,5 +1,5 @@
-FROM ubuntu:14.04.3
-MAINTAINER Doro Wu <fcwu.tw@gmail.com>
+FROM ubuntu:20.04
+MAINTAINER Jung JinYoung <callsign.core@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -14,8 +14,8 @@ ADD nginx.conf /etc/nginx/sites-enabled/default
 ADD startup.sh /
 ADD scan.py /
 
-ENV DISTS trusty
-ENV ARCHS amd64,i386
+ENV DISTS buster
+ENV ARCHS amd64,armhf
 EXPOSE 80
 VOLUME /data
 ENTRYPOINT ["/startup.sh"]

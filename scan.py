@@ -22,8 +22,8 @@ def info(msg):
 
 def do_scan():
     info('Scanning...')
-    for dist in os.getenv('DISTS', 'trusty').split(','):
-        for arch in os.getenv('ARCHS', 'amd64,i386').split(','):
+    for dist in os.getenv('DISTS', 'focal').split(','):
+        for arch in os.getenv('ARCHS', 'amd64,armhf').split(','):
             path = '/data/dists/{}/main/binary-{}'.format(dist, arch)
             if not os.path.exists(path):
                 os.makedirs(path)
